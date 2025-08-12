@@ -1,6 +1,7 @@
 import config
 from bs4 import BeautifulSoup
 import re
+import pandas as pd
 
 KEYWORDS = [
     "college",
@@ -98,4 +99,6 @@ def parse_profile():
         'Skills': set(skills)
     }
 
-    return profile_data
+    df = pd.DataFrame([profile_data])
+
+    return df
