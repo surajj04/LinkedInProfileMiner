@@ -30,7 +30,7 @@ def parse_profile():
     headline = soup.find("div", class_="text-body-medium").get_text(strip=True)
     location = soup.find('span', class_='text-body-small inline t-black--light break-words').get_text(strip=True)
     about = soup.find('div',
-                      class_='LmgCyiFrvIRFszEfwsyNWTsZeXojDDDpDxvk inline-show-more-text--is-collapsed inline-show-more-text--is-collapsed-with-line-clamp full-width').get_text(
+                      class_='zxCxqSvRjxaSbaugnxLfvNUTBJWicPjquw full-width t-14 t-normal t-black display-flex align-items-center').get_text(
         strip=True)
 
     experience_items = soup.select("section:has(h2:contains('Experience')) ul > li")
@@ -57,7 +57,7 @@ def parse_profile():
 
     # ------------------- education -------------------------------
 
-    for li in soup.select("ul.LeIZEdAISbHuyeBDvuntRZuqKqRRjMSgXoJc > li"):
+    for li in soup.select("ul.CcPTLnqQqRzyebUepUmLiAtEiwlybuYmQSI > li"):
         school_name = li.select_one(".t-bold span[aria-hidden='true']")
         degree = li.select_one(".t-14.t-normal span[aria-hidden='true']")
         years = li.select_one(".t-14.t-normal.t-black--light span[aria-hidden='true']")
@@ -82,7 +82,7 @@ def parse_profile():
     with open(config.RAW_DATA_PATH + 'skills.html', 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f, 'html.parser')
 
-    for li in soup.select("ul.LeIZEdAISbHuyeBDvuntRZuqKqRRjMSgXoJc > li"):
+    for li in soup.select("ul.CcPTLnqQqRzyebUepUmLiAtEiwlybuYmQSI > li"):
         skill_tag = li.select_one(".t-bold span[aria-hidden='true']")
         if skill_tag:  # Check if the element exists
             skill = skill_tag.get_text(strip=True)
